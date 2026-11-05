@@ -29,16 +29,16 @@ TEXTO = {code: letter for letter, code in MORSE.items()}
 def texto_a_morse(text: str) -> str:
     resultado = ""
 
-    for character in text.upper():
-        if character == " ":
+    for caracter in text.upper():
+        if caracter == " ":
             resultado += "/ "  # La barra separa palabras
-        elif character in MORSE:
-            resultado += MORSE[character] + " "  # Un espacio separa letras
+        elif caracter in MORSE:
+            resultado += MORSE[caracter] + " "  # Un espacio separa letras
 
     return resultado
 
 
-def morse_to_text(morse: str) -> str:
+def morse_a_texto(morse: str) -> str:
     resultado = ""
 
     for code in morse.split(" "):
@@ -50,6 +50,6 @@ def morse_to_text(morse: str) -> str:
     return resultado
 
 
-morse = text_to_morse("Chocapic. Es una marca de cereales?")
+morse = text_a_morse("Chocapic. Es una marca de cereales?")
 print(morse)           # -.-. .... --- -.-. .- .--. .. -.-. .-.-.- / . ... / ..- -. .- / -- .- .-. -.-. .- / -.. . / -.-. . .-. . .- .-.. . ... ..--..
-print(morse_to_text(morse))  # CHOCAPIC. ES UNA MARCA DE CEREALES?
+print(morse_a_text(morse))  # CHOCAPIC. ES UNA MARCA DE CEREALES?
