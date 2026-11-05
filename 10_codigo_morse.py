@@ -23,31 +23,31 @@ MORSE = {
 }
 
 # Diccionario al revés: de código morse a letra
-TEXT = {code: letter for letter, code in MORSE.items()}
+TEXTO = {code: letter for letter, code in MORSE.items()}
 
 
-def text_to_morse(text: str) -> str:
-    result = ""
+def texto_a_morse(text: str) -> str:
+    resultado = ""
 
     for character in text.upper():
         if character == " ":
-            result += "/ "  # La barra separa palabras
+            resultado += "/ "  # La barra separa palabras
         elif character in MORSE:
-            result += MORSE[character] + " "  # Un espacio separa letras
+            resultado += MORSE[character] + " "  # Un espacio separa letras
 
-    return result
+    return resultado
 
 
 def morse_to_text(morse: str) -> str:
-    result = ""
+    resultado = ""
 
     for code in morse.split(" "):
         if code == "/":
-            result += " "
+            resultado += " "
         elif code in TEXT:
-            result += TEXT[code]
+            resultado += TEXT[code]
 
-    return result
+    return resultado
 
 
 morse = text_to_morse("Chocapic. Es una marca de cereales?")
